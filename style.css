@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Tahoma, sans-serif;
+  }
+
+  div {
+    position: absolute;
+    display: flex;
+    align-items: center; /*to wyrownuje child elementy w pionie*/
+  }
+
+  p {
+    font-size: 8rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  button {
+    border-radius: 100%;
+    background-color: green;
+    border-style: none;
+    color: white;
+    height: 5rem;
+    width: 5rem;
+  }
+
+  #reset {
+    background-color: red;
+  }
+
+  .buttons {
+    flex-direction: column;
+    position: absolute;
+    left: 3rem; top: 3rem;
+    gap: 1rem;
+  }
+
+  .rocket {
+    flex-direction: column;
+    gap: 6px;
+    left: 70%;
+    bottom: 10vh;
+    height: 230px;
+    width: 150px;
+  }
+
+  #width100 {
+    max-width: 100%;
+  }
+
+  #width30 {
+    max-width: 30%;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .circle {
+    justify-content: center; /*to wyrownuje child elementy w poziomie*/
+    
+    /* wysrodkowanie diva na stronie pionowo i poziomo
+    position: absolute; najpierw wyciągam go z normalnego flow
+    left: 50%; ustawiam jego lewą krawędź zeby zaczynala sie w 50% szerokosci strony
+    top: 50%; robie to samo z jego gorna krawdzia i wysokoscia strony
+    transform: translate(-50%, , -50%); po powyzszym diva krawedzie byly rowno na srodku ale nie jego centrum dlatego musze za pomoca translate() przesunac sam div o 50% jego szerokosci i wysokosci w lewo i w gore*/
+    
+    left: 50%;
+    top: 5rem;
+    transform: translate(-50%, 0);
+    border-radius: 100%;
+    background-color: cornflowerblue;
+    height: 20rem;
+    width: 20rem;
+  }
+
+  /* animacja rakiety */
+  .blastof {
+    animation-name: toTheMoon;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes toTheMoon {
+    0% {bottom: 10vh; left: 70%;}
+    30% {transform: rotate(-40deg);}
+    100% {bottom: 130vh; left: 20%; transform: rotate(-30deg);}
+  }
+
+  /* miganie odliczania */
+  .animate {
+    opacity: 0.0;
+    animation-name: fontOpacity;
+    animation-duration: 1000ms;
+    animation-iteration-count: 5;
+  }
+
+  @keyframes fontOpacity {
+    0% {opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {opacity: 0.0;}
+  }
+
+   
